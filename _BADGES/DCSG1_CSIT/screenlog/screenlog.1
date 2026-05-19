@@ -1,0 +1,57 @@
+DDR 306b9977f5 wesley.yao 23/12/21-09:28:37,fwver: v1.15
+S5P1
+4x
+fc27
+rgef0
+rgef1
+DDRConf1
+DDR2, BW=16 Col=10 Bk=4 CS0 Row=13 CS=1 Size=64MB
+528MHz
+DDR bin out
+
+U-Boot SPL board init
+U-Boot SPL 2017.09 (Apr 06 2026 - 16:18:14)
+Trying to boot from MMC2
+MMC: no card present
+mmc_init: -123, time 2
+MMC: no card present
+mmc_init: -123, time 2
+spl: mmc init failed with error: -123
+Trying to boot from MTD1
+ENVF: Primary 0x00000000 - 0x00040000
+No misc partition
+Trying fit image at 0x400 sector
+## Verified-boot: 0
+## Checking uboot 0x00200000 (lzma @0x00400000) ... sha256(d762b2c952...) + sha256(b0be9568f2...) + OK
+## Checking fdt 0x00261170 ... sha256(9f596c5683...) + OK
+Total: 133.191/214.450 ms
+
+Jumping to U-Boot(0x00200000)
+
+
+U-Boot 2017.09 (Apr 06 2026 - 16:18:14 +0700)
+
+Model: Rockchip RV1106 EVB Board
+MPIDR: 0xf00
+PreSerial: 2, raw, 0xff4c0000
+DRAM:  64 MiB
+Sysmem: init
+Relocation Offset: 03d80000
+Relocation fdt: 02df9f58 - 02dfede8
+CR: M/C/I
+Using default environment
+
+Bootdev(atags): mtd 1
+ENVF: Primary 0x00000000 - 0x00040000
+PartType: ENV
+DM: v2
+No misc partition
+boot mode: None
+RESC: 'boot', blk@0x000020fe
+resource: sha256+
+FIT: no signed, no conf required
+DTB: rk-kernel.dtb
+HASH(c): OK
+Model: Luckfox Pico Plus
+download key pressed... no rockusb, entering download mode...
+Enter rockusb failed, fallback to bootrom...þRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUARTRKUART

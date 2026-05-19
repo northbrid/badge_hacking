@@ -1,0 +1,586 @@
+DDR 306b9977f5 wesley.yao 23/12/21-09:28:37,fwver: v1.15
+S5P1
+4x
+fc27
+rgef0
+rgef1
+DDRConf1
+DDR2, BW=16 Col=10 Bk=4 CS0 Row=13 CS=1 Size=64MB
+528MHz
+DDR bin out
+
+U-Boot SPL board init
+U-Boot SPL 2017.09 (Apr 06 2026 - 16:18:14)
+Trying to boot from MMC2
+MMC: no card present
+mmc_init: -123, time 2
+MMC: no card present
+mmc_init: -123, time 2
+spl: mmc init failed with error: -123
+Trying to boot from MTD1
+ENVF: Primary 0x00000000 - 0x00040000
+No misc partition
+Trying fit image at 0x400 sector
+## Verified-boot: 0
+## Checking uboot 0x00200000 (lzma @0x00400000) ... sha256(d762b2c952...) + sha256(b0be9568f2...) + OK
+## Checking fdt 0x00261170 ... sha256(9f596c5683...) + OK
+Total: 132.384/213.664 ms
+
+Jumping to U-Boot(0x00200000)
+
+
+U-Boot 2017.09 (Apr 06 2026 - 16:18:14 +0700)
+
+Model: Rockchip RV1106 EVB Board
+MPIDR: 0xf00
+PreSerial: 2, raw, 0xff4c0000
+DRAM:  64 MiB
+Sysmem: init
+Relocation Offset: 03d80000
+Relocation fdt: 02df9f58 - 02dfede8
+CR: M/C/I
+Using default environment
+
+Bootdev(atags): mtd 1
+ENVF: Primary 0x00000000 - 0x00040000
+PartType: ENV
+DM: v2
+No misc partition
+boot mode: None
+RESC: 'boot', blk@0x000020fe
+resource: sha256+
+FIT: no signed, no conf required
+DTB: rk-kernel.dtb
+HASH(c): OK
+Model: Luckfox Pico Plus
+## retrieving sd_update.txt ...
+MMC: no card present
+mmc_init: -123, time 2
+CLK: (uboot. arm: enter 816000 KHz, init 816000 KHz, kernel 0N/A)
+  apll 816000 KHz
+  dpll 528000 KHz
+  gpll 1188000 KHz
+  cpll 1000000 KHz
+  aclk_peri_root 400000 KHz
+  hclK_peri_root 200000 KHz
+  pclk_peri_root 100000 KHz
+  aclk_bus_root 300000 KHz
+  pclk_top_root 100000 KHz
+  pclk_pmu_root 100000 KHz
+  hclk_pmu_root 200000 KHz
+Net:   eth0: ethernet@ffa80000
+Hit key to stop autoboot('CTRL+C'):  0 
+## Booting FIT Image at 0x28d9100 with size 0x0031fd06
+Fdt Ramdisk skip relocation
+No misc partition
+## Loading kernel from FIT Image at 028d9100 ...
+   Using 'conf' configuration
+## Verified-boot: 0
+   Trying 'kernel' kernel subimage
+     Description:  unavailable
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x028e2700
+     Data Size:    3237320 Bytes = 3.1 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x00008000
+     Entry Point:  0x00008000
+     Hash algo:    sha256
+     Hash value:   6ee1a1e7bc97f30688633f3de69c18ba4588a5047886dd4a2494336824db87a5
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 028d9100 ...
+   Using 'conf' configuration
+   Trying 'fdt' fdt subimage
+     Description:  unavailable
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x028d9900
+     Data Size:    36144 Bytes = 35.3 KiB
+     Architecture: ARM
+     Load Address: 0x00c00000
+     Hash algo:    sha256
+     Hash value:   29d455846383d6a4cadfb6ec510fe8f60227c01eedb2cf6b2e72b42ddee98e20
+   Verifying Hash Integrity ... sha256+ OK
+   Loading fdt from 0x028d9100 to 0x00c00000
+   Booting using the fdt blob at 0x00c00000
+   Loading Kernel Image from 0x028e2700 to 0x00008000 ... OK
+   kernel loaded at 0x00008000, end = 0x0031e5c8
+   Using Device Tree in place at 00c00000, end 00c0bd2f
+Adding bank: 0x00000000 - 0x04000000 (size: 0x04000000)
+Total: 568.707/787.469 ms
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 5.10.160 (aaa@aaa-virtual-machine) (arm-rockchip830-linux-uclibcgnueabihf-gcc (crosstool-NG 1.24.0) 8.3.0, GNU ld (crosstool-NG 1.24.0) 2.32) #1 Mon Mar 9 21:30:34 WIB 2026
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=50c53c7d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: Luckfox Pico Plus
+[    0.000000] Memory policy: Data cache writeback
+[    0.000000] cma: Reserved 24576 KiB at 0x02800000
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000003ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000003ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000003ffffff]
+[    0.000000] CPU: All CPU(s) started in SVC mode.
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 16256
+[    0.000000] Kernel command line: user_debug=31 storagemedia=mtd androidboot.storagemedia=mtd androidboot.mode=normal  rootwait earlycon=uart8250,mmio32,0xff4c0000 console=ttyFIQ0 root=ubi0:rootfs snd_soc_core.prealloc_buffer_size_kbytes=16 coherent_pool=0 mtdparts=spi-nand0:256K(env),256K@256K(idblock),512K(uboot),4M(boot),30M(oem),6M(userdata),85M(rootfs) ubi.mtd=6 rootfstype=ubifs rk_dma_heap_cma=24M androidboot.fwver=uboot-04/06/2026
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 33176K/65536K available (4070K kernel code, 395K rwdata, 1952K rodata, 196K init, 146K bss, 7784K reserved, 24576K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000007] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000020] Switching to timer-based delay loop, resolution 41ns
+[    0.000541] Console: colour dummy device 80x30
+[    0.000595] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)
+[    0.000613] pid_max: default: 4096 minimum: 301
+[    0.000799] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000813] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.001479] CPU: Testing write buffer coherency: ok
+[    0.002169] Setting up static identity map for 0x81c0 - 0x81f8
+[    0.002654] devtmpfs: initialized
+[    0.009997] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.010215] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.010239] futex hash table entries: 16 (order: -5, 192 bytes, linear)
+[    0.010334] pinctrl core: initialized pinctrl subsystem
+[    0.011626] NET: Registered protocol family 16
+[    0.012136] DMA: failed to allocate 0 KiB pool for atomic coherent allocation
+[    0.012748] Registered FIQ tty driver
+[    0.013103] thermal_sys: Registered thermal governor 'step_wise'
+[    0.013110] thermal_sys: Registered thermal governor 'user_space'
+[    0.013363] cpuidle: using governor menu
+[    0.027576] rockchip-gpio ff380000.gpio: probed /pinctrl/gpio@ff380000
+[    0.028438] rockchip-gpio ff530000.gpio: probed /pinctrl/gpio@ff530000
+[    0.029280] rockchip-gpio ff550000.gpio: probed /pinctrl/gpio@ff550000
+[    0.030057] rockchip-gpio ff560000.gpio: probed /pinctrl/gpio@ff560000
+[    0.030167] rockchip-pinctrl pinctrl: probed pinctrl
+[    0.041881] fiq_debugger fiq_debugger.0: IRQ uart_irq not found
+[    0.041909] fiq_debugger fiq_debugger.0: IRQ wakeup not found
+[    0.042208] printk: console [ttyFIQ0] enabled
+[    0.042418] Registered fiq debugger ttyFIQ0
+[    0.044614] SCSI subsystem initialized
+[    0.044869] usbcore: registered new interface driver usbfs
+[    0.044920] usbcore: registered new interface driver hub
+[    0.044973] usbcore: registered new device driver usb
+[    0.045221] mc: Linux media interface: v0.10
+[    0.045267] videodev: Linux video capture interface: v2.00
+[    0.046521] Advanced Linux Sound Architecture Driver Initialized.
+[    0.047100] Bluetooth: Core ver 2.22
+[    0.047179] NET: Registered protocol family 31
+[    0.047189] Bluetooth: HCI device and connection manager initialized
+[    0.047210] Bluetooth: HCI socket layer initialized
+[    0.047221] Bluetooth: L2CAP socket layer initialized
+[    0.047246] Bluetooth: SCO socket layer initialized
+[    0.047555] rockchip-cpuinfo cpuinfo: SoC		: 11031000
+[    0.047575] rockchip-cpuinfo cpuinfo: Serial		: 5cf475bac4a922fb
+[    0.048007] rockchip,rknpor-powergood ff000000.syscon:rknpor-powergood: probe success!
+[    0.048903] clocksource: Switched to clocksource arch_sys_counter
+[    0.056112] NET: Registered protocol family 2
+[    0.056377] IP idents hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.056833] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+[    0.056866] TCP established hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.056885] TCP bind hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.056903] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.057015] UDP hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.057038] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.057184] NET: Registered protocol family 1
+[    0.057831] RPC: Registered named UNIX socket transport module.
+[    0.057857] RPC: Registered udp transport module.
+[    0.057865] RPC: Registered tcp transport module.
+[    0.057872] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.059007] rockchip-thermal ff3c8000.tsadc: tsadc is probed successfully!
+[    0.060218] Initialise system trusted keyrings
+[    0.060561] workingset: timestamp_bits=30 max_order=14 bucket_order=0
+[    0.064414] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.065280] NFS: Registering the id_resolver key type
+[    0.065354] Key type id_resolver registered
+[    0.065366] Key type id_legacy registered
+SPI0_M0_CS_ENABLE=1
+[    0.065413] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+SPI0_M0_MODE=1
+[    0.159278] Key type asymmetric registered
+UART4_M1_STATUS=1
+[    0.159304] Asymmetric key parser 'x509' registered
+UART3_M1_STATUS=1
+[    0.159331] io scheduler mq-deadline registered
+FBTFT_ENABLE=1
+[    0.159791] rockchip-usb2phy ff3e0000.usb2-phy: IRQ index 0 not found
+USB_MODE=host
+[    0.164542] dma-pl330 ff420000.dma-controller: Loaded driver for PL330 DMAC-241330
+Seeding 256 bits and crediting
+[    0.164574] dma-pl330 ff420000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
+Saving 256 bits of creditable seed for next boot
+[    0.165477] rockchip-pvtm ff240000.pvtm: pvtm@0 probed
+Starting syslogd: OK
+[    0.165688] rockchip-pvtm ff390000.pvtm: pvtm@0 probed
+Starting klogd: OK
+[    0.166039] rockchip-system-monitor rockchip-system-monitor: system monitor probe
+Running sysctl: [    0.166618] Serial: 8250/16550 driver, 6 ports, IRQ sharing disabled
+[    0.172770] random: crng init done
+[    0.182218] brd: module loaded
+[    0.188324] loop: module loaded
+[    0.190703] spi-nand spi2.0: Winbond SPI NAND was found.
+[    0.190737] spi-nand spi2.0: 128 MiB, block size: 128 KiB, page size: 2048, OOB size: 128
+[    0.191877] 7 cmdlinepart partitions found on MTD device spi-nand0
+[    0.191896] Creating 7 MTD partitions on "spi-nand0":
+[    0.191911] 0x000000000000-0x000000040000 : "env"
+OK
+[    0.193908] 0x000000040000-0x000000080000 : "idblock"
+[    0.195839] 0x000000080000-0x000000100000 : "uboot"
+[    0.197803] 0x000000100000-0x000000500000 : "boot"
+Populating /dev using udev: [    0.199760] 0x000000500000-0x000002300000 : "oem"
+[    0.201809] 0x000002300000-0x000002900000 : "userdata"
+[    0.203794] 0x000002900000-0x000007e00000 : "rootfs"
+[    0.207303] rk_gmac-dwmac ffa80000.ethernet: IRQ eth_lpi not found
+[    0.207527] rk_gmac-dwmac ffa80000.ethernet: PTP uses main clock
+[    0.207585] rk_gmac-dwmac ffa80000.ethernet: no regulator found
+[    0.207599] rk_gmac-dwmac ffa80000.ethernet: clock input or output? (input).
+[    0.207610] rk_gmac-dwmac ffa80000.ethernet: Can not read property: tx_delay.
+[    0.207621] rk_gmac-dwmac ffa80000.ethernet: set tx_delay to 0xffffffff
+[    0.207630] rk_gmac-dwmac ffa80000.ethernet: Can not read property: rx_delay.
+[    0.207639] rk_gmac-dwmac ffa80000.ethernet: set rx_delay to 0xffffffff
+[    0.207726] rk_gmac-dwmac ffa80000.ethernet: integrated PHY? (yes).
+[    0.207742] rk_gmac-dwmac ffa80000.ethernet: cannot get clock mac_clk_rx
+[    0.207755] rk_gmac-dwmac ffa80000.ethernet: cannot get clock mac_clk_tx
+[    0.207788] rk_gmac-dwmac ffa80000.ethernet: cannot get clock clk_mac_speed
+[    0.207798] rk_gmac-dwmac ffa80000.ethernet: clock input from PHY
+[    0.208044] rk_gmac-dwmac ffa80000.ethernet: init for RMII
+[    0.208285] rk_gmac-dwmac ffa80000.ethernet: User ID: 0x30, Synopsys ID: 0x51
+[    0.208308] rk_gmac-dwmac ffa80000.ethernet: 	DWMAC4/5
+[    0.208322] rk_gmac-dwmac ffa80000.ethernet: DMA HW capability register supported
+[    0.208333] rk_gmac-dwmac ffa80000.ethernet: RX Checksum Offload Engine supported
+[    0.208344] rk_gmac-dwmac ffa80000.ethernet: TX Checksum insertion supported
+[    0.208352] rk_gmac-dwmac ffa80000.ethernet: Wake-Up On Lan supported
+[    0.208360] rk_gmac-dwmac ffa80000.ethernet: TSO supported
+[    0.208368] rk_gmac-dwmac ffa80000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[    0.208378] rk_gmac-dwmac ffa80000.ethernet: TSO feature enabled
+[    0.208391] rk_gmac-dwmac ffa80000.ethernet: Using 40 bits DMA width
+[    0.215181] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.215611] phy phy-ff3e0000.usb2-phy.0: illegal mode
+[    0.215637] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    0.215676] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 1
+[    0.215891] xhci-hcd xhci-hcd.0.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000000022010010
+[    0.215954] xhci-hcd xhci-hcd.0.auto: irq 60, io mem 0xffb00000
+[    0.217115] hub 1-0:1.0: USB hub found
+[    0.217190] hub 1-0:1.0: 1 port detected
+[    0.217578] xhci-hcd xhci-hcd.0.auto: xHCI Host Controller
+[    0.217616] xhci-hcd xhci-hcd.0.auto: new USB bus registered, assigned bus number 2
+[    0.217641] xhci-hcd xhci-hcd.0.auto: Host supports USB 3.0 SuperSpeed
+[    0.217836] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    0.218569] hub 2-0:1.0: USB hub found
+[    0.218639] hub 2-0:1.0: config failed, hub doesn't have any ports! (err -19)
+[    0.219097] usbcore: registered new interface driver cdc_acm
+[    0.219113] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    0.219204] usbcore: registered new interface driver usb-storage
+[    0.219308] usbcore: registered new interface driver ch341
+[    0.219344] usbserial: USB Serial support registered for ch341-uart
+[    0.219408] usbcore: registered new interface driver usb_ch343
+[    0.219419] ch343: USB serial driver for ch342/ch343/ch344/ch347/ch9101/ch9102/ch9103/ch9104, etc.
+[    0.219425] ch343: V1.5 On 2022.12
+[    0.219473] usbcore: registered new interface driver cp210x
+[    0.219504] usbserial: USB Serial support registered for cp210x
+[    0.219712] gadgetfs: USB Gadget filesystem, version 24 Aug 2004
+[    0.219732] udc-core: couldn't find an available UDC - added [g_mass_storage] to list of pending drivers
+[    0.220386] i2c /dev entries driver
+[    0.221881] i2c i2c-4: 1 i2c clients have been registered at 0x30
+[    0.222275] i2c i2c-4: 2 i2c clients have been registered at 0x30
+[    0.223345] usbcore: registered new interface driver uvcvideo
+[    0.223366] USB Video Class driver (1.1.1)
+[    0.224194] cpu cpu0: leakage=13
+[    0.224977] cpu cpu0: avs=0
+[    0.225147] cpu cpu0: opp calibration done
+[    0.225329] cpu cpu0: l=10000 h=2147483647 hyst=5000 l_limit=0 h_limit=0 h_table=0
+[    0.225816] Synopsys Designware Multimedia Card Interface Driver
+[    0.226770] dtbocfg: 0.1.0
+[    0.226831] dtbocfg: OK
+[    0.228406] dwmmc_rockchip ffaa0000.mmc: No normal pinctrl state
+[    0.228441] dwmmc_rockchip ffaa0000.mmc: No idle pinctrl state
+[    0.228697] dwmmc_rockchip ffaa0000.mmc: IDMAC supports 32-bit address mode.
+[    0.228750] dwmmc_rockchip ffaa0000.mmc: Using internal DMA controller.
+[    0.228770] dwmmc_rockchip ffaa0000.mmc: Version ID is 270a
+[    0.228820] dwmmc_rockchip ffaa0000.mmc: DW MMC controller at irq 50,32 bit host data width,256 deep fifo
+[    0.229000] mmc_host mmc1: card is non-removable.
+[    0.230202] usbcore: registered new interface driver snd-usb-audio
+[    0.230880] rv1106-acodec ff480000.acodec: current soc_id: rv1103
+[    0.230982] rv1106-acodec ff480000.acodec: Use pa_ctl_gpio and pa_ctl_delay_ms: 0
+[    0.232860] NET: Registered protocol family 17
+[    0.232993] Key type dns_resolver registered
+[    0.234107] Loading compiled-in X.509 certificates
+[    0.251354] mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
+[    0.263032] input: adc-keys as /devices/platform/adc-keys/input/input0
+[    0.290498] mmc_host mmc1: Bus speed (slot 0) = 300000Hz (slot req 300000Hz, actual 300000HZ div = 0)
+[    0.340885] mmc_host mmc1: Bus speed (slot 0) = 200000Hz (slot req 200000Hz, actual 200000HZ div = 0)
+[    0.341975] ubi0: attaching mtd6
+[    0.388175] mmc_host mmc1: Bus speed (slot 0) = 187500Hz (slot req 100000Hz, actual 93750HZ div = 1)
+[    0.495500] ubi0: scanning is finished
+[    0.500066] ubi0: attached mtd6 (name "rootfs", size 85 MiB)
+[    0.500095] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    0.500106] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    0.500115] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    0.500124] ubi0: good PEBs: 680, bad PEBs: 0, corrupted PEBs: 0
+[    0.500133] ubi0: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    0.500143] ubi0: max/mean erase counter: 4/0, WL threshold: 4096, image sequence number: 1959433755
+[    0.500154] ubi0: available PEBs: 0, total reserved PEBs: 680, PEBs reserved for bad PEB handling: 20
+[    0.501381] ALSA device list:
+[    0.501404]   #0: rv-acodec
+[    0.502136] ubi0: background thread "ubi_bgt0d" started, PID 68
+[    0.502245] UBIFS (ubi0:0): Mounting in unauthenticated mode
+[    0.508963] usb 1-1: new high-speed USB device number 2 using xhci-hcd
+[    0.516914] UBIFS (ubi0:0): recovery needed
+[    0.537985] UBIFS (ubi0:0): recovery deferred
+[    0.538109] UBIFS (ubi0:0): UBIFS: mounted UBI device 0, volume 0, name "rootfs", R/O mode
+[    0.538125] UBIFS (ubi0:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    0.538140] UBIFS (ubi0:0): FS size: 81899520 bytes (78 MiB, 645 LEBs), journal size 9023488 bytes (8 MiB, 72 LEBs)
+[    0.538149] UBIFS (ubi0:0): reserved for root: 0 bytes (0 KiB)
+[    0.538163] UBIFS (ubi0:0): media format: w4/r0 (latest is w5/r0), UUID 6489A02A-77FC-46B2-938F-8AE4BE43D7C9, small LPT model
+[    0.538823] VFS: Mounted root (ubifs filesystem) readonly on device 0:14.
+[    0.539847] devtmpfs: mounted
+[    0.540080] Freeing unused kernel memory: 196K
+[    0.540092] Kernel memory protection not selected by kernel config.
+[    0.540122] Run /sbin/init as init process
+[    0.546821] process '/bin/busybox' started with executable stack
+[    0.601839] UBIFS (ubi0:0): completing deferred recovery
+[    0.658395] UBIFS (ubi0:0): background thread "ubifs_bgt0_0" started, PID 71
+[    0.664131] UBIFS (ubi0:0): deferred recovery completed
+[    0.698180] hub 1-1:1.0: USB hub found
+[    0.698305] hub 1-1:1.0: 4 ports detected
+[    0.921372] udevd[104]: starting version 3.2.7
+[    0.936775] udevd[104]: specified group 'input' unknown
+[    0.937822] udevd[104]: specified group 'kvm' unknown
+[    0.960809] udevd[105]: starting eudev-3.2.7
+[    1.119017] usb 1-1.1: new high-speed USB device number 3 using xhci-hcd
+[    1.354566] usb-storage 1-1.1:1.0: USB Mass Storage device detected
+[    1.364092] scsi host0: usb-storage 1-1.1:1.0
+[    1.377743] udevd[118]: failed to execute '/lib/udev/mtd_probe' 'mtd_probe /dev/mtd0ro': No such file or directory
+[    1.378336] udevd[119]: failed to execute '/lib/udev/mtd_probe' 'mtd_probe /dev/mtd1ro': No such file or directory
+[    1.385916] udevd[120]: failed to execute '/lib/udev/mtd_probe' 'mtd_probe /dev/mtd2ro': No such file or directory
+[    1.402611] udevd[125]: failed to execute '/lib/udev/mtd_probe' 'mtd_probe /dev/mtd3ro': No such file or directory
+[    1.418587] udevd[126]: failed to execute '/lib/udev/mtd_probe' 'mtd_probe /dev/mtd4ro': No such file or directory
+[    1.427531] udevd[127]: failed to execute '/lib/udev/mtd_probe' 'mtd_probe /dev/mtd5ro': No such file or directory
+[    1.436063] udevd[128]: failed to execute '/lib/udev/mtd_probe' 'mtd_probe /dev/mtd6ro': No such file or directory
+done
+/etc/init.d/S20linkmount info: mount point path [IGNORE] not found, skip...
+***********/dev/ubi4_0 not exist***********
+***********/dev/ubi4 not exist***********
+[    1.895028] ubi4: attaching mtd4
+[    1.949074] ubi4: scanning is finished
+[    1.957042] ubi4: attached mtd4 (name "oem", size 30 MiB)
+[    1.957072] ubi4: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+UBI device number 4, total 240 LEBs (30474240 bytes, 29.1 MiB), available 0 LEBs (0 bytes), LEB size 126976 bytes (124.0 KiB)
+[    1.957083] ubi4: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+try to make volume: /dev/ubi4_0 ...
+[    1.957092] ubi4: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubimkvol: error!: bad volume size: "0"
+[    1.957102] ubi4: good PEBs: 240, bad PEBs: 0, corrupted PEBs: 0
+[    1.957113] ubi4: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    1.957124] ubi4: max/mean erase counter: 4/0, WL threshold: 4096, image sequence number: 1208817183
+[    1.957136] ubi4: available PEBs: 0, total reserved PEBs: 240, PEBs reserved for bad PEB handling: 20
+[    1.958425] ubi4: background thread "ubi_bgt4d" started, PID 148
+[    1.985005] UBIFS (ubi4:0): Mounting in unauthenticated mode
+[    1.985277] UBIFS (ubi4:0): background thread "ubifs_bgt4_0" started, PID 153
+[    2.000129] UBIFS (ubi4:0): recovery needed
+[    2.119820] UBIFS (ubi4:0): recovery completed
+[    2.119948] UBIFS (ubi4:0): UBIFS: mounted UBI device 4, volume 0, name "oem"
+[    2.119964] UBIFS (ubi4:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    2.119978] UBIFS (ubi4:0): FS size: 26157056 bytes (24 MiB, 206 LEBs), journal size 4190208 bytes (3 MiB, 33 LEBs)
+[    2.119988] UBIFS (ubi4:0): reserved for root: 0 bytes (0 KiB)
+[    2.120003] UBIFS (ubi4:0): media format: w4/r0 (latest is w5/r0), UUID BA0341B1-50F4-4F6A-B107-4EDCFC3299FE, small LPT model
+***********/dev/ubi5_0 not exist***********
+[    2.163381] ubi5: attaching mtd5
+***********/dev/ubi5 not exist***********
+[    2.174771] ubi5: scanning is finished
+[    2.183052] ubi5: attached mtd5 (name "userdata", size 6 MiB)
+UBI device number 5, total 48 LEBs (6094848 bytes, 5.8 MiB), available 0 LEBs (0 bytes), LEB size 126976 bytes (124.0 KiB)
+[    2.183081] ubi5: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+try to make volume: /dev/ubi5_0 ...
+[    2.183093] ubi5: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubimkvol: error!: bad volume size: "0"
+[    2.183103] ubi5: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    2.183113] ubi5: good PEBs: 48, bad PEBs: 0, corrupted PEBs: 0
+[    2.183123] ubi5: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    2.183135] ubi5: max/mean erase counter: 8/3, WL threshold: 4096, image sequence number: 1817263713
+[    2.183145] ubi5: available PEBs: 0, total reserved PEBs: 48, PEBs reserved for bad PEB handling: 20
+[    2.185431] ubi5: background thread "ubi_bgt5d" started, PID 162
+[    2.206656] UBIFS (ubi5:0): Mounting in unauthenticated mode
+[    2.206905] UBIFS (ubi5:0): background thread "ubifs_bgt5_0" started, PID 167
+Initializing random number generator... [    2.221884] UBIFS (ubi5:0): recovery needed
+[    2.261552] UBIFS (ubi5:0): recovery completed
+done.
+[    2.261689] UBIFS (ubi5:0): UBIFS: mounted UBI device 5, volume 0, name "userdata"
+[    2.261708] UBIFS (ubi5:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    2.261721] UBIFS (ubi5:0): FS size: 1777664 bytes (1 MiB, 14 LEBs), journal size 1142785 bytes (1 MiB, 9 LEBs)
+[    2.261731] UBIFS (ubi5:0): reserved for root: 0 bytes (0 KiB)
+[    2.261744] UBIFS (ubi5:0): media format: w4/r0 (latest is w5/r0), UUID A4E6C6B8-58B1-4B77-9301-A19E7B37F525, small LPT model
+/dev/ubi5_0 on /userdata type ubifs (rw,relatime,assert=read-only,ubi=5,vol=0)
+Starting network: [    2.402222] rk_dvbm ffa70000.rkdvbm: probe start
+[    2.402273] rk_dvbm ffa70000.rkdvbm: dvbm ctx 595381a8
+[    2.402831] rk_dvbm ffa70000.rkdvbm: probe success
+[    2.410861] scsi 0:0:0:0: Direct-Access     Generic  STORAGE DEVICE   1404 PQ: 0 ANSI: 6
+OK
+Starting ntpd: [    2.536153] sd 0:0:0:0: [sda] 15298560 512-byte logical blocks: (7.83 GB/7.29 GiB)
+[    2.537406] sd 0:0:0:0: [sda] Write Protect is off
+[    2.538581] sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+[    2.546873]  sda: sda1
+[    2.552421] sd 0:0:0:0: [sda] Attached SCSI removable disk
+[    2.566678] sc3336 4-0030: driver version: 00.01.01
+[    2.566760] sc3336 4-0030: Failed to get reset-gpios
+[    2.566818] sc3336 4-0030: could not get default pinstate
+[    2.566831] sc3336 4-0030: could not get sleep pinstate
+[    2.566860] sc3336 4-0030: supply avdd not found, using dummy regulator
+[    2.567134] sc3336 4-0030: supply dovdd not found, using dummy regulator
+[    2.567231] sc3336 4-0030: supply dvdd not found, using dummy regulator
+[    2.586825] sc3336 4-0030: Unexpected sensor id(000000), ret(-5)
+[    2.663268] rkcifhw ffa10000.rkcif: no iommu attached, using non-iommu buffers
+[    2.663309] rkcifhw ffa10000.rkcif: No reserved memory region assign to CIF
+[    2.663763] rkcif rkcif-mipi-lvds: rkcif driver version: v00.02.00
+[    2.663890] rkcif rkcif-mipi-lvds: attach to cif hw node
+[    2.663904] rkcif rkcif-mipi-lvds: failed to get dphy hw node
+[    2.663914] rkcif rkcif-mipi-lvds: rkcif wait line 0
+[    2.663925] rkcif rkcif-mipi-lvds: rkcif fastboot reserve bufs num 3
+[    2.663940] : terminal subdev does not exist
+[    2.663952] : terminal subdev does not exist
+[    2.663962] : terminal subdev does not exist
+[    2.663970] : terminal subdev does not exist
+[    2.663981] : get_remote_sensor: video pad[0] is null
+[    2.663991] : rkcif_update_sensor_info: stream[0] get remote sensor_sd failed!
+[    2.664004] : rkcif_scale_set_fmt: req(80, 60) src out(0, 0)
+[    2.664013] : get_remote_sensor: video pad[0] is null
+[    2.664022] : rkcif_update_sensor_info: stream[0] get remote sensor_sd failed!
+[    2.664031] : rkcif_scale_set_fmt: req(80, 60) src out(0, 0)
+[    2.664039] : get_remote_sensor: video pad[0] is null
+[    2.664047] : rkcif_update_sensor_info: stream[0] get remote sensor_sd failed!
+[    2.664056] : rkcif_scale_set_fmt: req(80, 60) src out(0, 0)
+[    2.664066] : get_remote_sensor: video pad[0] is null
+[    2.664073] : rkcif_update_sensor_info: stream[0] get remote sensor_sd failed!
+[    2.664082] : rkcif_scale_set_fmt: req(80, 60) src out(0, 0)
+[    2.677813] rkcif rkcif-mipi-lvds: No memory-region-thunderboot specified
+OK
+[    2.679255] rockchip-mipi-csi2-hw ffa20000.mipi-csi2-hw: enter mipi csi2 hw probe!
+[    2.679455] rockchip-mipi-csi2-hw ffa20000.mipi-csi2-hw: probe success, v4l2_dev:mipi-csi2-hw!
+[    2.679614] rockchip-mipi-csi2-hw ffa30000.mipi-csi2-hw: enter mipi csi2 hw probe!
+[    2.679748] rockchip-mipi-csi2-hw ffa30000.mipi-csi2-hw: probe success, v4l2_dev:mipi-csi2-hw!
+[    2.680211] rockchip-mipi-csi2 mipi0-csi2: attach to csi2 hw node
+[    2.680285] rkcif rkcif-mipi-lvds: Entity type for entity rockchip-mipi-csi2 was not initialized!
+[    2.680307] rockchip-mipi-csi2: Async registered subdev
+0
+[    2.680317] rockchip-mipi-csi2: probe success, v4l2_dev:rkcif-mipi-lvds!
+[    2.744284] rkisp_hw ffa00000.rkisp: is_thunderboot: 0
+[    2.744316] rkisp_hw ffa00000.rkisp: Missing rockchip,grf property
+[    2.744373] rkisp_hw ffa00000.rkisp: max input:0x0@0fps
+[    2.744573] rkisp_hw ffa00000.rkisp: get sram size:253952
+[    2.744589] rkisp_hw ffa00000.rkisp: no iommu attached, using non-iommu buffers
+[    2.744600] rkisp_hw ffa00000.rkisp: No reserved memory region. default cma area!
+[    2.745030] rkisp rkisp-vir0: rkisp driver version: v02.05.00
+[    2.745192] rkisp rkisp-vir0: No memory-region-thunderboot specified
+[    2.746415] rkisp rkisp-vir0: Entity type for entity rkisp-isp-subdev was not initialized!
+[    2.777065] rockchip-csi2-dphy-hw ff3e8000.csi2-dphy-hw: csi2 dphy hw probe successfully!
+[    2.809159] rockchip-csi2-dphy csi2-dphy0: csi2 dphy0 probe successfully!
+0
+Starting sshd: 0
+0
+[    3.183225] rkcif rkcif-mipi-lvds: clear unready subdev num: 3
+[    3.185253] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[0] get remote terminal sensor failed!
+[    3.185281] rkcif-mipi-lvds: Async subdev notifier completed
+[    3.185310] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[0] get remote terminal sensor failed!
+[    3.185319] rkcif-mipi-lvds: There is not terminal subdev, not synchronized with ISP
+[    3.185365] rkcif-mipi-lvds: rkcif_update_sensor_info: stream[0] get remote terminal sensor failed!
+[    3.185374] rkcif-mipi-lvds: There is not terminal subdev, not synchronized with ISP
+[    3.186176] rkisp rkisp-vir0: clear unready subdev num: 1
+[    3.186708] rkisp-vir0: Async subdev notifier completed
+[    3.226290] rga: rga2, irq = 36, match scheduler
+[    3.227351] rga: rga2 hardware loaded successfully, hw_version:3.3.87975.
+[    3.227382] rga: rga2 probe successfully
+[    3.227695] rga_iommu: IOMMU binding successfully, default mapping core[0x4]
+[    3.229077] rga: Module initialized. v1.3.1
+[    3.318672] mpp_vcodec: loading out-of-tree module taints kernel.
+[    3.334552] mpp_vcodec: init new
+[    3.334741] mpp_service mpp-srv: 424abb9b author: Yandong Lin 2024-04-29 [mpp_enc]: fix wrap enc sw timeout when resolution switch
+[    3.334758] mpp_service mpp-srv: probe start
+[    3.343423] mpp_rkvenc_540c ffa50000.rkvenc: probing start
+[    3.343744] mpp_rkvenc_540c ffa50000.rkvenc: probing finish
+[    3.344259] mpp_vepu_pp ffa60000.rkvenc-pp: probe device
+[    3.344384] mpp_vepu_pp ffa60000.rkvenc-pp: shared_rst_a_pp is not found!
+[    3.344398] vepu_pp_init:526: No aclk reset resource define
+[    3.344409] mpp_vepu_pp ffa60000.rkvenc-pp: shared_rst_h_pp is not found!
+[    3.344417] vepu_pp_init:529: No hclk reset resource define
+OK
+[    3.345939] mpp_vepu_pp ffa60000.rkvenc-pp: probing finish
+Input      (null) Format:SRGGB8_1X8 Size:800x600@4fps Offset(0,0)
+[    3.346260] mpp_service mpp-srv: probe success
+Starting telnetd: [    3.375833] RKNPU ff660000.npu: RKNPU: rknpu iommu device-tree entry not found!, using non-iommu mode
+OK
+[    3.378280] RKNPU ff660000.npu: RKNPU: Initialized RKNPU driver: v0.9.2 for 20230825
+[    3.378434] RKNPU ff660000.npu: dev_pm_opp_set_regulators: no regulator (rknpu) found: -19
+/etc/init.d/S50usbdevice: line 144: can't open : no such file
+Debug: configfs_init
+[    3.482262] rockit_load start
+[    3.512846] rockit_load end
+[    3.534460] rve: rve_irq, irq = 52, match scheduler
+[    3.536844] rve: Driver loaded successfully rve[2] ver:[2021]58.1a
+[    3.536875] rve: probe successfully
+[    3.538320] rve: Module initialized. v1.0.6
+/
+ln: /oem/usr/www/userdata: No such file or directory
+ln: /oem/usr/www/usb0: No such file or directory
+ln: /oem/usr/www/sdcard: No such file or directory
+[    3.621490] file system registered
+mkdir: can't create directory '/sys/kernel/config/usb_gadget/rockchip/functions/mtp.gs0': No such file or directory
+cat: can't open '/sys/bus/sdio/devices/*/uevent': No such file or directory
+[    3.689932] using random self ethernet address
+[    3.689965] using random host ethernet address
+cat: can't open '/sys/bus/sdio/devices/*/uevent': No such file or directory
+mkdir: can't create directory '/sys/kernel/config/usb_gadget/rockchip/functions/acm.gs6': No such file or directory
+Error: not found rkipc.ini !!!
+[    3.744765] Mass Storage Function, version: 2009/09/11
+/oem/usr/bin/RkLunch.sh: exit: line 107: Illegal number: -1
+[    3.744801] LUN: removable file: (no medium)
+cat: can't open '/sys/bus/sdio/devices/*/uevent': No such file or directory
+cat: can't open '/sys/bus/sdio/devices/*/uevent': No such file or directory
+cat: can't open '/sys/bus/sdio/devices/*/uevent': No such file or directory
+[    3.887258] rk_gmac-dwmac ffa80000.ethernet eth0: PHY [stmmac-0:02] driver [RK630 PHY] (irq=POLL)
+[    3.887659] dwmac4: Master AXI performs any burst length
+[    3.887689] rk_gmac-dwmac ffa80000.ethernet eth0: No Safety Features support found
+[    3.887712] rk_gmac-dwmac ffa80000.ethernet eth0: PTP not supported by HW
+[    3.888044] rk_gmac-dwmac ffa80000.ethernet eth0: configuring for phy/rmii link mode
+cat: can't open '/sys/bus/sdio/devices/*/uevent': No such file or directory
+cat: can't open '/sys/bus/sdio/devices/*/uevent': No such file or directory
+wlan0 not found. Stop run rkwifi_server.
+[    4.323843] read descriptors
+[    4.323929] read strings
+sh: write error: No such device
+ifconfig: SIOCSIFADDR: No such device
+ifconfig: SIOCGIFFLAGS: No such device
+/usr/bin/luckfox-config: line 262: warning: command substitution: ignored null byte in input
+Only Luckfox Pico Ultra /Luckfox Pico Ultra W support RGB
+FBTFT enable
+Complete configuration loading
+== Hello world! ==
+=== SD CARD ===
+[   11.213055] FAT-fs (sda1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+/dev/sda1 on /mnt/sdcard type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+brw-rw----    1 root     disk        8,   0 Jan  1 00:00 [1;35m/dev/sda[m
+brw-rw----    1 root     disk        8,   1 Jan  1 00:00 [1;35m/dev/sda1[m
+/root/main.py and /root/boot.py not exist ,pass...
+OK
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+RTC does not require time calibration
+
+Welcome to luckfox pico
+luckfox login: Detected videos on /mnt/sdcard: 5
+List of videos: ['/mnt/sdcard/._2_def-con-in-sg-v2.png', '/mnt/sdcard/0_csit.png', '/mnt/sdcard/1_starlabs.png', '/mnt/sdcard/2_def-con-in-sg-v2.png', '/mnt/sdcard/3_CSIT.mp4']
+numid=24,iface=MIXER,name='DAC LINEOUT Volume'
+  ; type=INTEGER,access=rw---R--,values=1,min=0,max=30,step=0
+  : values=26
+  | dBscale-min=-39.00dB,step=1.50dB,mute=1
+Menu emptied: menu.png
+cmd ['ffmpeg', '-re', '-i', '/root/images/csit.png', '-vf', 'scale=320:240,transpose=2,negate', '-pix_fmt', 'rgb565le', '-f', 'fbdev', '/dev/fb0', '-r', '10']
+[   14.474197] of_dma_request_slave_channel: dma-names property of node '/serial@ff4d0000' missing or empty
+[   14.474263] dw-apb-uart ff4d0000.serial: failed to request DMA, use interrupt mode
