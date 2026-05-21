@@ -13,10 +13,15 @@
 * YF08E / TXS0108E  
   https://cdn.sparkfun.com/assets/1/8/1/e/2/txs0108e.pdf
 
+The black board on the white board is this:  
+https://www.luckfox.com/EN-Luckfox-Pico
+
 ## Interfaces
 
 * The SD card contains images and videos, which the badge can play.
 * The USB1 port enumerates an USB-to-UART interface which runs at baud __115200__
+* It has an Ethernet adapter, but I need to install the connector.  
+  The order of the pins from left to right: TXP, TXN, GND, RXP, RXN
 
 ## Software
 
