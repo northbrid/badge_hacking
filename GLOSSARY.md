@@ -1,7 +1,8 @@
 Glossary
 * Espressif - Chip manufacturer
 * ESP32 - Popular dual-core SoC with BLE, BT and WiFi by Epressif
-* ESP32C3 - Lower power ESP32 with only one core, and no BT (only BLE) 
+* ESP32-C3 - Lower power ESP32 with only one core, and no BT (only BLE)
+* ESP32-C6 - Another instance of the cost-effective C series, but with ZigBee
 * ESP8266 - Another popular chip by Espressif, but with no BT / BLE, only WiFi
 * EIM - Espressif Install Manager: Framework for installing Espressif softwares
 * IDF - Espressif's IoT Development Framework: compiler, components and menuconfig for building firmware
